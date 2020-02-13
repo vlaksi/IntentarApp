@@ -30,24 +30,30 @@ class PocetnaStrana extends StatelessWidget {
             centerTitle: true,
             backgroundColor: Colors.red[600],
         ),
-        body: Row(
+        body: Column(
           /*
-          mainAxisAlignment - podesavanje za horizontalu
-          crossAxisAlignment - podesavanje za vertikalu
+          Sada je obrnuto u odnosu na Rows.
+
+          Horizontalno namestanje widgeta -
+          Vertikalno namestanje widgeta -
            */
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.end,       // sve spustamo na visinu najviseg 
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            Text('ciao'),
-            FlatButton(
-              onPressed: (){},
-              color: Colors.amber,
-              child: Text('click me'),
+            Container(
+              padding: EdgeInsets.all(20.0),
+              color: Colors.cyan,
+              child: Text('one'),
             ),
             Container(
-              color: Colors.cyan,
               padding: EdgeInsets.all(30.0),
-              child: Text('unutar kontenjera'),
+              color: Colors.amber,
+              child: Text('two'),
+            ),
+            Container(
+              padding: EdgeInsets.all(40.0),
+              color: Colors.red,
+              child: Text('three'),
             ),
           ],
         ),
