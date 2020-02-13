@@ -30,31 +30,40 @@ class PocetnaStrana extends StatelessWidget {
             centerTitle: true,
             backgroundColor: Colors.red[600],
         ),
-        body: Column(
-          /*
-          Sada je obrnuto u odnosu na Rows.
-
-          Horizontalno namestanje widgeta -
-          Vertikalno namestanje widgeta -
-           */
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.end,
+        body: Row(
           children: <Widget>[
-            Container(
-              padding: EdgeInsets.all(20.0),
-              color: Colors.cyan,
-              child: Text('one'),
+            Expanded(
+                child: Image.asset('assets/lv.jpg'),
+              flex: 4,
             ),
-            Container(
-              padding: EdgeInsets.all(30.0),
-              color: Colors.amber,
-              child: Text('two'),
+
+            Expanded(
+              flex: 3,              // za sva tri expanded dela proporcialno delimo ekran
+              child: Container(     // sto veci flex -> veci deo ekrana dobija taj widget
+                padding: EdgeInsets.all(30.0),
+                color: Colors.red,
+                child: Text('1'),
+              ),
             ),
-            Container(
-              padding: EdgeInsets.all(40.0),
-              color: Colors.red,
-              child: Text('three'),
+
+            Expanded(
+              flex: 2,
+              child: Container(
+                padding: EdgeInsets.all(30.0),
+                color: Colors.cyan,
+                child: Text('2'),
+              ),
             ),
+
+            Expanded(
+              flex: 1,
+              child: Container(
+                padding: EdgeInsets.all(30.0),
+                color: Colors.cyan[100],
+                child: Text('3'),
+              ),
+            ),
+
           ],
         ),
         floatingActionButton: FloatingActionButton(
