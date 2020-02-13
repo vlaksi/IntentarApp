@@ -31,7 +31,42 @@ class PocetnaStrana extends StatelessWidget {
             backgroundColor: Colors.red[600],
         ),
         body: Center(                   // u body imamo center widget koji sve sto je u njemu centrira
-            child: Image.asset("assets/lv.jpg"),  // za slike sa interneta Image.network('url'),
+            child: IconButton(
+              onPressed: () {
+                print("You clicked me");
+              },
+              icon: Icon(Icons.mail),
+              color: Colors.amber,
+            ),
+            /* Dodavanje ikonice u dugme
+            RaisedButton.icon(
+              onPressed: () {},
+              icon: Icon(
+                Icons.mail
+              ),
+              label: Text('mail me'),
+              color: Colors.amber,
+            ),
+            */
+
+            /* Dodavanje dumgeta.
+            RaisedButton(
+              onPressed: () {
+                print("You clicked me :o");
+              },
+              child: Text('click me'),
+              color: Colors.lightBlue[200],
+            ),
+            */
+
+            /* Dodavanje ikonice.
+            Icon(
+              Icons.airport_shuttle,
+              color: Colors.lightBlue,
+              size: 50.0,
+            ),
+            */
+
         ),
         floatingActionButton: FloatingActionButton(
             onPressed: () {},
