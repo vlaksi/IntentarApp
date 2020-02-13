@@ -30,43 +30,24 @@ class PocetnaStrana extends StatelessWidget {
             centerTitle: true,
             backgroundColor: Colors.red[600],
         ),
-        body: Center(                   // u body imamo center widget koji sve sto je u njemu centrira
-            child: IconButton(
-              onPressed: () {
-                print("You clicked me");
-              },
-              icon: Icon(Icons.mail),
-              color: Colors.amber,
-            ),
-            /* Dodavanje ikonice u dugme
-            RaisedButton.icon(
-              onPressed: () {},
-              icon: Icon(
-                Icons.mail
-              ),
-              label: Text('mail me'),
-              color: Colors.amber,
-            ),
-            */
+        body: Container(                // kontenjer za druge widgete
+          /*
+            Kada jedan widget nema vise 'dece' tj. 'child'
+            container ce zauzeti ceo prostor roditelja,
+            u ovom slucaju ceo prostor za body.
 
-            /* Dodavanje dumgeta.
-            RaisedButton(
-              onPressed: () {
-                print("You clicked me :o");
-              },
-              child: Text('click me'),
-              color: Colors.lightBlue[200],
-            ),
-            */
+            A ako bude dece, kontenjer zauzima velicinu
+            tog deteta. U ovom slucaju posto imamo child
+            zauzece njegovu velicinu.
 
-            /* Dodavanje ikonice.
-            Icon(
-              Icons.airport_shuttle,
-              color: Colors.lightBlue,
-              size: 50.0,
-            ),
-            */
-
+            Zbog toga uvodimo i koristimo padding za
+            razmak unutar kontenjera, a koristimo i
+            marging za razmak OKO konetenjera.
+           */
+          padding: EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 40.0),
+          margin: EdgeInsets.all(20.0),
+          color: Colors.grey[400],
+          child: Text('ciao'),
         ),
         floatingActionButton: FloatingActionButton(
             onPressed: () {},
