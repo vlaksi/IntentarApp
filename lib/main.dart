@@ -30,24 +30,26 @@ class PocetnaStrana extends StatelessWidget {
             centerTitle: true,
             backgroundColor: Colors.red[600],
         ),
-        body: Container(                // kontenjer za druge widgete
+        body: Row(
           /*
-            Kada jedan widget nema vise 'dece' tj. 'child'
-            container ce zauzeti ceo prostor roditelja,
-            u ovom slucaju ceo prostor za body.
-
-            A ako bude dece, kontenjer zauzima velicinu
-            tog deteta. U ovom slucaju posto imamo child
-            zauzece njegovu velicinu.
-
-            Zbog toga uvodimo i koristimo padding za
-            razmak unutar kontenjera, a koristimo i
-            marging za razmak OKO konetenjera.
+          mainAxisAlignment - podesavanje za horizontalu
+          crossAxisAlignment - podesavanje za vertikalu
            */
-          padding: EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 40.0),
-          margin: EdgeInsets.all(20.0),
-          color: Colors.grey[400],
-          child: Text('ciao'),
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.end,       // sve spustamo na visinu najviseg 
+          children: <Widget>[
+            Text('ciao'),
+            FlatButton(
+              onPressed: (){},
+              color: Colors.amber,
+              child: Text('click me'),
+            ),
+            Container(
+              color: Colors.cyan,
+              padding: EdgeInsets.all(30.0),
+              child: Text('unutar kontenjera'),
+            ),
+          ],
         ),
         floatingActionButton: FloatingActionButton(
             onPressed: () {},
