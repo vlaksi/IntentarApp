@@ -1,76 +1,109 @@
 import 'package:flutter/material.dart';
 
-/*
- Arrow funkcija main, koja ocekuje stablo widgeta.
- Argument je widget koji sluzi kao wraper za ostale
- widgete.
- */
 void main() => runApp(MaterialApp(
-    home: PocetnaStrana(),
+  home: BankovniRacun(),
 ));
 
-/*
-  Scaffold widget nam omogucava osnovni layout za nasu aplikaciju.
-
-  Stateless - widget koji se ne moze menjati tokom vremena.
-  Stateful  - widget koji se moze menjati tokom vremena.
-
- */
-
-/*
-    Ovo nam omogucava 'HotReload' kako bi mogli videti rezultate
-    nase izmene u kodu instant.
- */
-class PocetnaStrana extends StatelessWidget {
+class BankovniRacun extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(                 // za gornji deo aplikacije
-            title: Text('My first app'),
-            centerTitle: true,
-            backgroundColor: Colors.red[600],
-        ),
-        body: Row(
+      backgroundColor: Colors.grey[900],
+      appBar: AppBar(
+        title: Text('Bilans stanja'),
+        centerTitle: true,
+        backgroundColor: Colors.grey[850],
+        elevation: 0.0,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Expanded(
-                child: Image.asset('assets/lv.jpg'),
-              flex: 4,
-            ),
-
-            Expanded(
-              flex: 3,              // za sva tri expanded dela proporcialno delimo ekran
-              child: Container(     // sto veci flex -> veci deo ekrana dobija taj widget
-                padding: EdgeInsets.all(30.0),
-                color: Colors.red,
-                child: Text('1'),
+            Center(
+              child: CircleAvatar(
+                radius: 40.0,
+                backgroundImage: AssetImage('assets/mirak.jpg'),
               ),
             ),
-
-            Expanded(
-              flex: 2,
-              child: Container(
-                padding: EdgeInsets.all(30.0),
-                color: Colors.cyan,
-                child: Text('2'),
+            Divider(
+              color: Colors.grey[800],
+              height: 60.0,
+            ),
+            Text(
+              'FIRMA',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 2.0,
               ),
             ),
-
-            Expanded(
-              flex: 1,
-              child: Container(
-                padding: EdgeInsets.all(30.0),
-                color: Colors.cyan[100],
-                child: Text('3'),
+            SizedBox(height: 10.0),
+            Text(
+              'Futog-Kineska radnja',
+              style: TextStyle(
+                color: Colors.amberAccent[200],
+                fontWeight: FontWeight.bold,
+                fontSize: 28.0,
+                letterSpacing: 2.0,
               ),
             ),
-
+            SizedBox(height: 30.0),
+            Text(
+              'AKTIVA',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              '900.000,00 din.',
+              style: TextStyle(
+                color: Colors.amberAccent[200],
+                fontWeight: FontWeight.bold,
+                fontSize: 28.0,
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(height: 30.0),
+            Text(
+              'PASIVA',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              '899.000,00 din.',
+              style: TextStyle(
+                color: Colors.amberAccent[200],
+                fontWeight: FontWeight.bold,
+                fontSize: 28.0,
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(height: 30.0),
+            Row(
+              children: <Widget>[
+                Icon(
+                  Icons.email,
+                  color: Colors.grey[400],
+                ),
+                SizedBox(width: 10.0),
+                Text(
+                  'mirafutog@uns.ac.rs',
+                  style: TextStyle(
+                    color: Colors.grey[400],
+                    fontSize: 18.0,
+                    letterSpacing: 1.0,
+                  ),
+                )
+              ],
+            ),
           ],
         ),
-        floatingActionButton: FloatingActionButton(
-            onPressed: () {},
-            child: Text('push'),
-            backgroundColor: Colors.red[600],
-        ),
-    ) ;
+      ),
+    );
   }
 }
